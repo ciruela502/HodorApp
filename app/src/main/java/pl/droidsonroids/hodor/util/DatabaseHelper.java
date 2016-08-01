@@ -25,7 +25,7 @@ public class DatabaseHelper {
     public void updateUserToken(final String token) {
         mDatabaseReference.child(Constants.DB_USER)
                 .child(mHodorPreferences.getUsername())
-                .child("token")
+                .child(Constants.DB_TOKEN)
                 .setValue(token);
     }
 

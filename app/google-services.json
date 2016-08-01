@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "948171548959",
+    "firebase_url": "https://hodorapp-6ffac.firebaseio.com",
+    "project_id": "hodorapp-6ffac",
+    "storage_bucket": "hodorapp-6ffac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:948171548959:android:7a9181381008587a",
+        "android_client_info": {
+          "package_name": "pl.droidsonroids.hodor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "948171548959-jham44gm21osbo4sfqo8fhfi83r2p2tp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUFw-hfv_tj25WBDdd-ZkQ2pOb1OjoP18"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

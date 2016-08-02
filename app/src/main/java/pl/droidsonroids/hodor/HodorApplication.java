@@ -17,7 +17,7 @@ public class HodorApplication extends Application {
         super.onCreate();
         sInstance = this;
 
-        mHodorPreferences = new HodorPreferences();
+        mHodorPreferences = new HodorPreferences(this);
         mRestAdapter = new RestAdapter();
         mDatabaseHelper = new DatabaseHelper();
     }

@@ -14,4 +14,12 @@
     <string name="send_notification_msg">Do you want to send notification to %s?</string>
     <string name="send">Send</string>
     <string name="send_hodor_back">Send Hodor Back</string>
+    <string name="toast_service_unavailable">brak serwisów</string>
+    <string name="username">username</string>
+    <string name="hodor">Hodor</string>
+    <string name="answer">odpowiedź</string>
+    <string name="firstPartUri">android.resource://</string>
+    <string name="secondPartUri">/</string>
+    <string name="token">token</string>
+    <string name="on_bind">Not yet implemented</string>
 </resources>

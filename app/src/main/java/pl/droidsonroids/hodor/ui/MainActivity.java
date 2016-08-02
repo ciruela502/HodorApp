@@ -12,11 +12,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import java.util.ArrayList;
-import java.util.List;
 import pl.droidsonroids.hodor.HodorApplication;
 import pl.droidsonroids.hodor.R;
 import pl.droidsonroids.hodor.adapter.UsersListAdapter;
@@ -25,6 +27,7 @@ import pl.droidsonroids.hodor.util.DialogUtil;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = "MainActivity";
     @BindView(R.id.toolbar) Toolbar mToolbar;
     @BindView(R.id.recycler_view_users) RecyclerView mRecyclerViewUsers;
 

@@ -1,5 +1,6 @@
 package pl.droidsonroids.hodor.services;
 
+import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -18,18 +19,16 @@ import pl.droidsonroids.hodor.ui.LoginActivity;
  */
 public class HodorMessagingService extends FirebaseMessagingService {
 
-    private PendingIntent mPendingIntent;
-    private PendingIntent mPendingIntentAnwser;
     private String userName;
-    int mCode = 001;
+    int mCode = 1;
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
         Uri sound = getUri();
         userName = remoteMessage.getData().get(getString(R.string.username));
-        mPendingIntent = getPendingIntent();
-        mPendingIntentAnwser = getPendingIntentAnswer();
+        PendingIntent mPendingIntent = getPendingIntent();
+        PendingIntent mPendingIntentAnswer = getPendingIntentAnswer();
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
@@ -37,8 +36,8 @@ public class HodorMessagingService extends FirebaseMessagingService {
                         .setSmallIcon(R.drawable.ic_notification)
                         .setContentText(getString(R.string.hodor))
                         .setContentIntent(mPendingIntent)
-                        .addAction(R.drawable.ic_plus_white_36dp, getString(R.string.answer), mPendingIntentAnwser)
-                        .setPriority(1000)
+                        .addAction(R.drawable.ic_plus_white_36dp, getString(R.string.answer), mPendingIntentAnswer)
+                        .setPriority(Notification.PRIORITY_MAX)
                         .setAutoCancel(true)
                         .setSound(sound);
 
@@ -47,12 +46,11 @@ public class HodorMessagingService extends FirebaseMessagingService {
     }
 
     public Uri getUri() {
-        StringBuilder mStringBuilder = new StringBuilder();
-        mStringBuilder.append(getString(R.string.firstPartUri))
-                .append(getPackageName())
-                .append(getString(R.string.secondPartUri))
-                .append(R.raw.hodor2);
-        return Uri.parse(mStringBuilder.toString());
+        String mStringBuilder = getString(R.string.firstPartUri) +
+                getPackageName() +
+                getString(R.string.secondPartUri) +
+                R.raw.hodor2;
+        return Uri.parse(mStringBuilder);
     }
 
     public PendingIntent getPendingIntent() {

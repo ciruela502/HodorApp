@@ -15,7 +15,6 @@ import pl.droidsonroids.hodor.util.DatabaseHelper;
 
 public class UsersListViewHolder extends RecyclerView.ViewHolder {
 
-    private static final String TAG = "UserListHolder";
     @BindView(R.id.text_view_username)
     TextView mTextViewUsername;
 
